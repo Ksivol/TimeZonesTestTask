@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TimeZonesTestTask</string>
+    <string name="start_game">Начать игру</string>
+    <string name="casual_mode">Обычный режим</string>
+    <string name="time_mode">Игра на время</string>
+    <string name="text_game_mode">Выберете желаемый режим игры: Обычный или на время</string>
+    <string name="next_page">Далее</string>
+    <string name="check_page">Проверить</string>
+    <string name="restart_game">Сыграть ещё раз!</string>
+    <string name="congratulations">Поздравляю!</string>
+    <string name="finish_game">Вы закончили игру!</string>
+    <string name="score_finish_page">Вы набрали "$totel_score"  очков</string>
 </resources>
