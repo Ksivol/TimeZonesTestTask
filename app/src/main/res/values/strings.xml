@@ -10,4 +10,10 @@
     <string name="congratulations">Поздравляю!</string>
     <string name="finish_game">Вы закончили игру!</string>
     <string name="score_finish_page">Вы набрали "$totel_score"  очков</string>
+    <string name="city1">Москва</string>
+    <string name="city2">Париж</string>
+    <string name="city3">Рио</string>
+    <string name="city4">Ванкувер</string>
+    <string name="city5">Сеул</string>
+    <string name="city6">Иерихон</string>
 </resources>
