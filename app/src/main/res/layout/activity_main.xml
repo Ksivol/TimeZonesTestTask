@@ -7,30 +7,14 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/startGameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:backgroundTint="@android:color/transparent"
-        android:hapticFeedbackEnabled="false"
+    <FrameLayout
+        android:id="@+id/frameStartView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/button" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/startGameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start_game"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/startGameButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/startGameButton"
-        app:layout_constraintTop_toTopOf="@+id/startGameButton"
-        app:layout_constraintVertical_bias="0.361" />
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
