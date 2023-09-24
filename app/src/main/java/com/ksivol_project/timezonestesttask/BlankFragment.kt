@@ -4,24 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.ksivol_project.timezonestesttask.databinding.FragmentBlankBinding
 
 class BlankFragment : Fragment() {
     private lateinit var binding: FragmentBlankBinding
-
-    private val cityChoose = mapOf(
-        activity?.getString(R.string.city1) to ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.time1,null),
-        activity?.getString(R.string.city2) to ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.time2,null),
-        activity?.getString(R.string.city3) to ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.time3,null),
-        activity?.getString(R.string.city4) to ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.time4,null),
-        activity?.getString(R.string.city5) to ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.time5,null),
-        activity?.getString(R.string.city6) to ResourcesCompat.getDrawable(requireActivity().resources, R.drawable.time6,null)
-    )
-
-    private val cityShuffled = setOf(cityChoose.keys).toTypedArray()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,13 +22,28 @@ class BlankFragment : Fragment() {
         connect()
     }
 
-    private fun connect() = with(binding){
-        cityShuffled.shuffle()
-        city1.text = cityShuffled[0].toString()
+    private fun connect() = with(binding) {
+        val cityChoose = mapOf(
+            activity?.getString(R.string.city1) to R.drawable.time1,
+            activity?.getString(R.string.city2) to R.drawable.time2,
+            activity?.getString(R.string.city3) to R.drawable.time3,
+            activity?.getString(R.string.city4) to R.drawable.time4,
+            activity?.getString(R.string.city5) to R.drawable.time5,
+            activity?.getString(R.string.city6) to R.drawable.time6
+        )
+        val param = mutableListOf<String>()
+        cityChoose.keys.forEach {
+            if (it != null) {
+                param.add(it)
+            }
+        }
+        val shuffledtest = param.shuffled()
+        city1.text = shuffledtest[0]
+        cityView1.setImageResource(cityChoose[shuffledtest[0]]!!)
     }
+
     companion object {
         @JvmStatic
-        fun newInstance() =
-            BlankFragment()
+        fun newInstance() = BlankFragment()
     }
 }
